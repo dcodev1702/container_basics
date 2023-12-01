@@ -1,3 +1,5 @@
+// Author: Liz Rice w/ Aqua Security
+// Site: https://www.lizrice.com/
 // go run main.go run         <command> <args>
 // docker         run <image> <command> <args>
 package main
