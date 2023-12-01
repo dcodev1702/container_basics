@@ -16,8 +16,8 @@ chmod +x alpine-make-rootfs
 ## Command used to create an alpine linux file system
 * You don't have to run this step if you don't want to as the alpinefs v3.18.5 has been uploaded to the alpinefs directory.
 ```console
-sudo ./alpine-make-rootfs --branch v3.18 --packages 'python3 ruby' --timezone 'America/New_York' --script-chroot alpinefs-$(date +%Y%m%d).tar.gz - <<'SHELL'
-apk add --no-progress -t .make build-base
+sudo ./alpine-make-rootfs --branch v3.18 --packages 'python3 ruby bash' --timezone 'America/New_York' --script-chroot alpinefs-$(date +%Y%m%d).tar.gz - <<'SHELL'
+apk add --no-progress -t .make build-base bash
 apk del --no-progress .make
 SHELL
 ```
