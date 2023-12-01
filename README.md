@@ -31,7 +31,7 @@ You now have an alpine filesystem (ver 3.18.5) that you can use to chroot to!  <
 This is required in order to follow Liz's video through its entirity.
 
 ## The Grand Finale
-* Now it is time to run your own custom bare bones container!
+* It is now time to run your very own custom bare bones container!!
 ```console
 go run main.go run /bin/bash
 ```
