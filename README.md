@@ -28,3 +28,6 @@ cd alpinefs && tar zxvf alpinefs-20231201.tar.gz
 ```
 You now have an alpine fs (version 3.18.5) that you can use to chroot to!  <br />
 This is required in order to follow Liz's video through its entirity.
+
+Additional Resources:
+https://github.com/rootless-containers/rootlesskit
