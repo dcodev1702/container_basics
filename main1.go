@@ -21,7 +21,7 @@ func main() {
 }
 
 func run() {
-   fmt.Printf("Running %v as user %d in process %d\n", os.Args[2:], os.Geteuid(), os.Getpid())
+   fmt.Printf("Running %v as user %d as PID %d\n", os.Args[2:], os.Geteuid(), os.Getpid())
 
    cmd := exec.Command("/proc/self/exe", append([]string{"child"}, os.Args[2:]...)...)
    cmd.Stdin  = os.Stdin
@@ -46,7 +46,7 @@ func child() {
    if err != nil {
      panic(err)
    }
-   fmt.Printf("Running %v as user %d in process %d\n", os.Args[2:], os.Geteuid(), os.Getpid())
+   fmt.Printf("Running %v as user %d as PID %d\n", os.Args[2:], os.Geteuid(), os.Getpid())
 
    must(syscall.Sethostname([]byte("container-00")))
    must(syscall.Chroot(pwd + "/alpinefs"))
