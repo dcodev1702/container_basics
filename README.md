@@ -14,6 +14,7 @@ chmod +x alpine-make-rootfs
 ```
 
 ## Command used to create an alpine linux file system
+* You don't have to run this step if you don't want to as the alpinefs v3.18.5 has been uploaded to the alpinefs directory.
 ```console
 sudo ./alpine-make-rootfs --branch v3.18 --packages 'python3 ruby' --timezone 'America/New_York' --script-chroot alpinefs-$(date +%Y%m%d).tar.gz - <<'SHELL'
 apk add --no-progress -t .make build-base
@@ -28,6 +29,12 @@ cd alpinefs && tar zxvf alpinefs-20231201.tar.gz
 ```
 You now have an alpine filesystem (ver 3.18.5) that you can use to chroot to!  <br />
 This is required in order to follow Liz's video through its entirity.
+
+## The Grand Finale
+* Now it is time to run your own custom bare bones container!
+```console
+go run main.go run /bin/bash
+```
 
 Additional Resources:
 * https://github.com/rootless-containers/rootlesskit
