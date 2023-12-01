@@ -30,4 +30,5 @@ You now have an alpine filesystem (version 3.18.5) that you can use to chroot to
 This is required in order to follow Liz's video through its entirity.
 
 Additional Resources:
-https://github.com/rootless-containers/rootlesskit
+* https://github.com/rootless-containers/rootlesskit
+* https://github.com/cphowarth/lizricedemo
