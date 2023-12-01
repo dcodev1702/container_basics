@@ -41,15 +41,20 @@ func run() {
 }
 
 func child() {
+
+   pwd, err := os.Getwd()
+   if err != nil {
+     panic(err)
+   }
    fmt.Printf("Running %v as user %d in process %d\n", os.Args[2:], os.Geteuid(), os.Getpid())
 
-   must(syscall.Sethostname([]byte("container")))
-   must(syscall.Chroot("/home/lorenzo/container_basics/alpinefs"))
+   must(syscall.Sethostname([]byte("container-00")))
+   must(syscall.Chroot(pwd + "/alpinefs"))
    must(os.Chdir("/"))
    must(syscall.Mount("proc", "proc", "proc", 0, ""))
 	
    cmd := exec.Command(os.Args[2], os.Args[3:]...)
-   cmd.Stdin = os.Stdin
+   cmd.Stdin  = os.Stdin
    cmd.Stdout = os.Stdout
    cmd.Stderr = os.Stderr
 	
